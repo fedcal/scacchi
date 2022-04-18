@@ -2,10 +2,7 @@ package pezzi;
 
 import giocatori.Alliance;
 import org.carrot2.shaded.guava.common.collect.ImmutableList;
-import scacchiera.Board;
-import scacchiera.BoardUtils;
-import scacchiera.Move;
-import scacchiera.Tile;
+import scacchiera.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,7 +32,7 @@ public class Knight extends Piece{
      * @return List{@literal<Move>} - lista di mosse lecite
      */
     @Override
-    public Collection<Move> calculateLegalMoves(Board board) {
+    public Collection<Move> calculateLegalMoves(final Board board) {
         final List<Move> legalMoves = new ArrayList<>();
         for(final int currentCandidateOffset:CANDIDATE_MOVE_COORDINATES){
             final int candidateDestinationCoordinate=this.piecePosition +currentCandidateOffset;
@@ -45,12 +42,12 @@ public class Knight extends Piece{
                 }
                 final Tile candidateDestinationTile=board.getTile(candidateDestinationCoordinate);
                 if(!candidateDestinationTile.isTileOccupated()){
-                    legalMoves.add(new Move());
+                    legalMoves.add(new MajorMove(board,this,candidateDestinationCoordinate));
                 }else{
-                    final Piece pieceDestination = candidateDestinationTile.getPiece();
-                    final Alliance pieceAlliance= pieceDestination.getPieceAllience();
+                    final Piece pieceAtDestination = candidateDestinationTile.getPiece();
+                    final Alliance pieceAlliance= pieceAtDestination.getPieceAllience();
                     if(this.pieceAllience!=pieceAlliance){
-                        legalMoves.add(new Move());
+                        legalMoves.add(new AttackMove(board,this,candidateDestinationCoordinate, pieceAtDestination));
                     }
                 }
             }

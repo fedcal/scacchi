@@ -46,7 +46,7 @@ public abstract class Tile {
      */
     private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles() {
         final Map<Integer,EmptyTile> emptyTileMap= new HashMap<>();
-        for(int i=0; i<64;i++){
+        for(int i=0; i<BoardUtils.NUM_TIELS;i++){
             emptyTileMap.put(i,new EmptyTile(i));
         }
         //return Collections.unmodifiableMap(emptyTileMap); //Se non si vuole utilizzare la libreria guava
