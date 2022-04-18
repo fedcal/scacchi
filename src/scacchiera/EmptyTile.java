@@ -8,9 +8,9 @@ import pezzi.Piece;
 public  final class EmptyTile extends Tile{
     /**
      * Costruttore classe EmptyTile
-     * @param coordinate
+     * @param coordinate final int -coordinata della cella
      */
-    public EmptyTile(int coordinate){
+    public EmptyTile(final int coordinate){
         super(coordinate);
     }
 

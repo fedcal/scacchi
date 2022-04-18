@@ -9,14 +9,14 @@ public final class OccupiedTile extends Tile{
     /**
      * Pezzo rappresentante il pezzo sulla scacchiera
      */
-    private Piece pieceOnTile;
+    private final Piece pieceOnTile;
 
     /**
      * Costruttore della classe
      * @param tileCoordinate int - coordinata della classe
      * @param pieceOnTile Piece - pezzo della scacchiera
      */
-    public OccupiedTile(int tileCoordinate, Piece pieceOnTile){
+    public OccupiedTile(final int tileCoordinate, final Piece pieceOnTile){
         super(tileCoordinate);
         this.pieceOnTile=pieceOnTile;
     }
