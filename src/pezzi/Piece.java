@@ -4,7 +4,7 @@ import giocatori.Alliance;
 import scacchiera.Board;
 import scacchiera.Move;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Classe per identificare i pezzi all'interno della scacchiera.
@@ -34,12 +34,20 @@ public abstract class Piece {
      * @param board final Board - scacchiera
      * @return List {@literal <Move>} - lista delle mosse
      */
-    public abstract List<Move> calculateLegalMoves(final Board board);
+    public abstract Collection<Move> calculateLegalMoves(final Board board);
 
+    /**
+     * Restituisce la posizione di un pezzo
+     * @return int
+     */
     public int getPiecePosition() {
         return this.piecePosition;
     }
 
+    /**
+     * Restituisc la fazione a cui fa parte il pezzo
+     * @return Alliance
+     */
     public Alliance getPieceAllience() {
         return this.pieceAllience;
     }
