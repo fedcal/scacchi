@@ -13,11 +13,11 @@ public abstract class Piece {
     /**
      * Indica la posizione del pezzo
      */
-    private final int piecePosition;
+    protected final int piecePosition;
     /**
      * Indica a quale fazione fa riferimento il pezzo (bianco/nero)
      */
-    private final Alliance pieceAllience;
+    protected final Alliance pieceAllience;
 
     /**
      * Costruttore di classe
@@ -35,4 +35,12 @@ public abstract class Piece {
      * @return List {@literal <Move>} - lista delle mosse
      */
     public abstract List<Move> calculateLegalMoves(final Board board);
+
+    public int getPiecePosition() {
+        return this.piecePosition;
+    }
+
+    public Alliance getPieceAllience() {
+        return this.pieceAllience;
+    }
 }
