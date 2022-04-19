@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Classe raffigurante il cavallo
+ * Classe Knight raffigurante il cavallo sulla scacchiera
  */
 public class Knight extends Piece{
     /**
