@@ -9,27 +9,27 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Classe Bishop rappresentante il pezzo dell'alfiere sulla scacchiera
+ * Classe rappresentante la torre nella scacchiera
  */
-public class Bishop extends Piece{
+public class Rook extends Piece{
     /**
      * Distanze che il pezzo può percorrere per spostarsi da una posizione ad un'altra
      */
-    private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES ={-9,-7,7,9};
+    private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES ={-8,-1,1,8};
     /**
      * Costruttore di classe
      *
      * @param piecePosition final int - posizione del pezzo
      * @param pieceAllience final Alliance - fazione a cui fa riferimento il pezzo
      */
-    public Bishop(int piecePosition, Alliance pieceAllience) {
+    public Rook(int piecePosition, Alliance pieceAllience) {
         super(piecePosition, pieceAllience);
     }
 
     /**
-     * Funzione per calcolare le mosse legali del corrente pezzo.
+     * Funzione per calcolare la lista di mosse legali per il seguente pezzo
      * @param board final Board - scacchiera
-     * @return Collection{@literal <Move>} - collezione di mosse legali del pezzo
+     * @return Collection {@literal <Move>} - collezione di movimenti
      */
     @Override
     public Collection<Move> calculateLegalMoves(Board board) {
@@ -66,7 +66,7 @@ public class Bishop extends Piece{
      * @return bollean - True o False
      */
     private boolean isFirstColumnEsclusion(final int currentPosition, final int candidateOffset){
-        return BoardUtils.FIRST_COLUMN[currentPosition]&&(candidateOffset==-9||candidateOffset==7);
+        return BoardUtils.FIRST_COLUMN[currentPosition]&&(candidateOffset==-1);
     }
 
     /**
@@ -76,6 +76,6 @@ public class Bishop extends Piece{
      * @return bollean - True o False
      */
     private boolean isEightColumnEsclusion(final int currentPosition, final int candidateOffset){
-        return BoardUtils.EIGTH_COLUMN[currentPosition]&&(candidateOffset==-7||candidateOffset==9);
+        return BoardUtils.EIGTH_COLUMN[currentPosition]&&(candidateOffset==1);
     }
 }
