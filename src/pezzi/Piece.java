@@ -20,6 +20,11 @@ public abstract class Piece {
     protected final Alliance pieceAllience;
 
     /**
+     * Attributo per indicare se il pezzo ha già eseguito la sua prima mossa
+     */
+    protected final boolean isFirstMove;
+
+    /**
      * Costruttore di classe
      * @param piecePosition final int - posizione del pezzo
      * @param pieceAllience final Alliance - fazione a cui fa riferimento il pezzo
@@ -27,6 +32,15 @@ public abstract class Piece {
     public Piece(final int piecePosition, final Alliance pieceAllience){
         this.piecePosition=piecePosition;
         this.pieceAllience=pieceAllience;
+        this.isFirstMove=false;
+    }
+
+    /**
+     * Metodo per verificare se il pezzo ha già eseguito la sua prima mossa o meno
+     * @return boolean - true o false
+     */
+    public boolean isFirstMove(){
+        return this.isFirstMove;
     }
 
     /**

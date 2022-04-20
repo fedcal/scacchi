@@ -26,6 +26,14 @@ public class BoardUtils {
      */
     public static final boolean[] EIGTH_COLUMN = initColumn(7);
     /**
+     * Vettore per indicare la seconda riga della scacchiera, utile per la gestione della prima mossa dei pedoni neri
+     */
+    public static final boolean[] SECOND_ROW=null;
+    /**
+     * Vettore per indicare la seconda riga della scacchiera, utile per la gestione della prima mossa dei pedoni bianchi
+     */
+    public static final boolean[] SEVENTH_ROW=null;
+    /**
      * Numero di celle
      */
     public static final int NUM_TIELS=64;
