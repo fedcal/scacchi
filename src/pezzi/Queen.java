@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Classe rappresentante il pezzo della regina sulla scacchiera
+ */
 public class Queen extends Piece{
     /**
      * Distanze che il pezzo può percorrere per spostarsi da una posizione ad un'altra

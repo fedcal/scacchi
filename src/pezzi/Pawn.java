@@ -1,6 +1,7 @@
 package pezzi;
 
 import giocatori.Alliance;
+import org.carrot2.shaded.guava.common.collect.ImmutableList;
 import scacchiera.Board;
 import scacchiera.BoardUtils;
 import scacchiera.MajorMove;
@@ -65,6 +66,6 @@ public class Pawn extends Piece{
                 }
             }
         }
-        return null;
+        return ImmutableList.copyOf(legalMoves);
     }
 }
